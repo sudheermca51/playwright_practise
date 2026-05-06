@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Alerts Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f6f8;
+        }
+        h1 {
+            color: #333;
+        }
+        .box {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Alerts Demo</h1>
+
+    <!-- ALERT -->
+    <div class="box">
+        <h2>1. Alert Box</h2>
+        <p>
+            An <b>alert</b> is used to display a simple message to the user.
+            It has only an <b>OK</b> button.
+        </p>
+        <button onclick="showAlert()">Show Alert</button>
+    </div>
+
+    <!-- CONFIRM -->
+    <div class="box">
+        <h2>2. Confirm Box (Yes / No)</h2>
+        <p>
+            A <b>confirm</b> box is used when you want the user to choose 
+            <b>OK (Yes)</b> or <b>Cancel (No)</b>.
+        </p>
+        <button onclick="showConfirm()">Show Confirm</button>
+        <div id="confirmResult" class="result"></div>
+    </div>
+
+    <!-- PROMPT -->
+    <div class="box">
+        <h2>3. Prompt Box</h2>
+        <p>
+            A <b>prompt</b> box allows the user to enter input.
+        </p>
+        <button onclick="showPrompt()">Show Prompt</button>
+        <div id="promptResult" class="result"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+
+        // ALERT FUNCTION
+        function showAlert() {
+            alert("This is a simple alert box!");
+        }
+
+        // CONFIRM FUNCTION
+        function showConfirm() {
+            let result = confirm("Do you want to continue?");
+
+            if (result) {
+                document.getElementById("confirmResult").innerText = "User clicked YES (OK)";
+            } else {
+                document.getElementById("confirmResult").innerText = "User clicked NO (Cancel)";
+            }
+        }
+
+        // PROMPT FUNCTION
+        function showPrompt() {
+            let name = prompt("Enter your name:");
+
+            if (name !== null && name !== "") {
+                document.getElementById("promptResult").innerText = "Hello, " + name;
+            } else {
+                document.getElementById("promptResult").innerText = "User cancelled or entered nothing";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
