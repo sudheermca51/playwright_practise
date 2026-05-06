@@ -50,7 +50,6 @@ pipeline {
 
         always {
             archiveArtifacts artifacts: 'playwright-report/**/*', fingerprint: true
-            archiveArtifacts artifacts: 'test-results/**/*', fingerprint: true
         }
 
         success {
